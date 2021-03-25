@@ -71,3 +71,14 @@ export default {
     install,
     Store
 }
+
+
+
+
+/**
+ * 1. 为什么能再多有页面都可以使用store，因为把store挂在到了所有的组件中，也就是挂载在所有的页面里
+ * 使用mixin方式，在beforeCreat的生命周期中去寻找根结点，获取根结点store
+ * 2.创建store，将初始化数据state变成响应式，new vue实例，写在data中，因为getter、mutations、actions里面都是方法，
+ * 创建本地对象，遍历里面的方法，将方法都添加在本地实例中，
+ * 
+ * ***/
