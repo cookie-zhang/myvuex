@@ -55,13 +55,13 @@ const install = (v)=>{
     // 调用mixin将$store添加到每个组件中,这也是为什么每个组件都能调用this.#store的原因
     Vue.mixin({
         beforeCreate(){
-           // console.log(this.$options) // root // 说明是根结点
+           // console.log(this.$options.name) // root // 说明是根结点
             // mixin给每个组件都混入beforeCreate生命周期，当组件渲染的时候，就拿到跟组件的store赋值给当前的store,也就是为什么每个页面都可以使用this.$store的原因
             // 判断是不是根结点
             if(this.$options && this.$options.store){                                      //     |
                 this.$store = this.$options.store   // <------------------------------------------|
             } else {
-                // 如果不是根结点，那么去找他的父节点，寻找父节点的store
+                // 如果不是根结点，那么去找他的父节点，寻找父节点的store  依次向上查找寻找根结点store
                 this.$store = this.$parent && this.$parent.$store
             }
         }
