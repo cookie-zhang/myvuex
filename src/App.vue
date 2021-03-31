@@ -14,6 +14,8 @@
    <h2> <button @click="handleMiuns">减少</button></h2>
    <h2> <button @click="handleAsnycIncre">异步增加</button></h2>
    <h2> <button @click="handleAsnycMiuns">异步减少</button></h2>
+   <!-- 全局组件模拟 -->
+   <quanjucom />
   </div>
 </template>
 
